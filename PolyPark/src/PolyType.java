@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class PolyType {
 	
@@ -5,5 +6,11 @@ public class PolyType {
 	String id;
 	int quantity;
 	int myMerit;
+	int exitGo;
+	int age;
+	String gender;
+	
+	ArrayList<String> ticket = new ArrayList<String>();
+	//ArrayList<String>
 	
 }

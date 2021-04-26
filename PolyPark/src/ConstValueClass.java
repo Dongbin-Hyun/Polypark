@@ -13,9 +13,11 @@ public class ConstValueClass {
 	final static int exit = 2;
 	
 	final static int[] dayList = {56000, 47000, 44000, 0};
-	final static int[] nightList = {46000, 40000, 370000};
+	final static int[] nightList = {46000, 40000, 37000, 0};
 	
 	final static double[] meritList = {1, 0.6, 0.5, 0.8, 0.85};
+	
+	final static String fileAddress = "D:\\PolyParkList.csv";
 	
 	
 	
