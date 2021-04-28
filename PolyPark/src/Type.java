@@ -13,6 +13,7 @@ public class Type {
 	int inputContinueExit1;
 	int inputContinueExit2;
 	int totalTicket;
+
 	
 	
 

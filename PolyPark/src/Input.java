@@ -44,6 +44,7 @@ public class Input {
 		
 		if (exitChoice1 == 2) {
 			System.out.println("티켓발권을 종료합니다. 감사합니다.");
+			System.out.printf("\n");
 		}
 		return exitChoice1;
 	}

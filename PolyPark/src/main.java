@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Input ip = new Input();
 		Processing pc = new Processing();
@@ -11,11 +12,15 @@ public class Main {
 		Output op = new Output();
 		Calendar c = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		
+		FileWrite fw = new FileWrite();
+		
+		
 
 		while (true) {
 			tp = new Type();
-
-
+			fw.headerWrite();
+			
 			while (true) {
 				tp.currentDate = sdf.format(c.getTime());
 				tp.ticketDayNight = ip.inputTicketType();
@@ -33,6 +38,9 @@ public class Main {
 
 				tp.inputContinueExit1 = ip.inputContinueExit1();
 				tp.totalTicket += tp.ticketPrice;
+				
+				fw.dataWrite(tp.ticketDayNight, tp.age,
+						tp.quantity, tp.ticketPrice, tp.discountType);
 
 				if(tp.inputContinueExit1 == 1) {
 					continue;
@@ -42,14 +50,17 @@ public class Main {
 					System.out.println("¿¡·¯");
 				}
 			}
+			
 			for(int i = 0 ; i < tp.table.size(); i++) {
 				System.out.print(tp.table.get(i) + " ");
 				if (i % 5 == 4) {
 					System.out.println();
 				}
 			}
-
+			
 			System.out.println(tp.totalTicket);
+			
+			op.printTable(tp);
 
 			tp.inputContinueExit2 = ip.inputContinueExit2();
 			if (tp.inputContinueExit2 == 1) {
@@ -58,7 +69,9 @@ public class Main {
 			if (tp.inputContinueExit2 == 2) {
 				break;
 			}
-
+			
 		}
+		fw.fileClose();
 	}
+	
 }

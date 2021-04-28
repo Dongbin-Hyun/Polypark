@@ -19,6 +19,8 @@ public class Constant {
 	final static int oldNightPrice = 37000;
 	final static int babyPrice = 0;
 	
+	
+	
 	final static double disabledRate = 0.6;
 	final static double heroRate = 0.5;
 	final static double multiChildRate = 0.8;
@@ -39,6 +41,8 @@ public class Constant {
 	final static int before2000Woman = 2;
 	final static int after2000Man = 3;
 	final static int after2000Woman = 4;
+	
+	final static String fileAddress = "PolyPark.csv";
 	
 	 
 
