@@ -4,3 +4,4 @@
 # ~20210429
 # ticketing : 티켓 가격 계산
 # reporting : 구매한 티켓 분석 
+# poly.csv : 입력된 값 파일
