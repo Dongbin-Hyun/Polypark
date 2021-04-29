@@ -32,7 +32,7 @@ public class ConstantClass {
 	final static int minChild = 3;
 	final static int minTeen = 13;
 	final static int maxChild = 12;
-	final static int maxTeen =- 18;
+	final static int maxTeen = 18;
 	final static int maxAdult = 64;
 	
 	
