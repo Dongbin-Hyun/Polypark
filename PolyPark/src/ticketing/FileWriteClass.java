@@ -1,16 +1,19 @@
+package ticketing;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class FileWrite {
+public class FileWriteClass {
+	
 	private FileWriter fw;
 	boolean isFileExist;
 
-	public FileWrite() {
+	public FileWriteClass() {
 		try {
-			File file = new File(Constant.fileAddress);
+			File file = new File("D:\\poly.csv");
 			if (file.exists() == false) {
 				isFileExist = false;
 			} else {
@@ -38,13 +41,14 @@ public class FileWrite {
 		}
 	}
 	
-	public void dataWrite(String ticketDayOrNight, String age,
-			int quantity, int ticketPrice, String discountType) throws IOException {
+	public void dataWrite(String dayOrNight, String customerAge,
+			int quantity, int ticketPrice, String setDiscountType) throws IOException {
 		Calendar c = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		
-		String result = sdf.format(c.getTime()) + "," + ticketDayOrNight + "," + age + "," + quantity
-				+ "," + ticketPrice + "," + discountType + "\n";
+		String result = sdf.format(c.getTime()) + "," + dayOrNight + "," + customerAge + "," + quantity
+				+ "," + ticketPrice + "," + setDiscountType + "\n";
 		fw.write(result);
 	}
+
 }

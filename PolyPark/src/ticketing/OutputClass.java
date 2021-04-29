@@ -1,5 +1,7 @@
+package ticketing;
 
-public class Output {
+public class OutputClass {
+
 	
 	public void ticketTypePrint() {
 		System.out.println("권종을 선택하세요.");
@@ -34,15 +36,15 @@ public class Output {
 		System.out.println("2. 종료");
 	}
 	
-	public void totalList(Type tp) {
-		tp.table.add(tp.ticketDayNight);
-		tp.table.add(tp.age);
+	public void totalList(TypeClass tp) {
+		tp.table.add(tp.dayOrNight);
+		tp.table.add(tp.customerAge);
 		tp.table.add(Integer.toString(tp.quantity));
 		tp.table.add(Integer.toString(tp.ticketPrice));
-		tp.table.add(tp.discountType);
+		tp.table.add(tp.setDiscountType);
 	}
 	
-	public void printTable(Type tp) {
+	public void printTable(TypeClass tp) {
 		System.out.printf("\n");
 		System.out.println("===========================폴리랜드=========================");
 		for (int i = 0; i < tp.table.size() ; i += 5) {
@@ -65,3 +67,6 @@ public class Output {
 	}
 
 }
+
+
+

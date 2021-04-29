@@ -1,47 +1,52 @@
+package ticketing;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Main {
+public class MainClass {
+
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		Input ip = new Input();
-		Processing pc = new Processing();
-		Type tp;
-		Output op = new Output();
+			// TODO Auto-generated method stub
+		InputClass ip = new InputClass();
+		ProcessingClass pc = new ProcessingClass();
+		TypeClass tp;
+		OutputClass op = new OutputClass();
 		Calendar c = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-		
-		FileWrite fw = new FileWrite();
-		
-		
+			//PolyparkReport pr = new PolyparkReport();
+			
+		FileWriteClass fw = new FileWriteClass();
+			
+			
 
 		while (true) {
-			tp = new Type();
+			tp = new TypeClass();
 			fw.headerWrite();
-			
+				
 			while (true) {
 				tp.currentDate = sdf.format(c.getTime());
-				tp.ticketDayNight = ip.inputTicketType();
-				tp.age = ip.inputCustmoerID();
-				tp.quantity = ip.inputQuantity();
-				tp.discountType = ip.inputDiscountType();
-				tp.ticketPrice = pc.calPrice(tp.age, tp.quantity, tp.discountType);
+				tp.dayOrNight = pc.ticketTypeChoice(ip.inputTicketType());
+				tp.customerAge = pc.calAge(ip.inputCustmoerID());
+				tp.quantity = pc.calQuantity(ip.inputQuantity());
+				tp.setDiscountType = pc.setDiscountChoice(ip.inputDiscountType());
+				tp.ticketPrice = pc.calTicketPrice(tp.dayOrNight, tp.customerAge, tp.quantity, tp.setDiscountType);
 				tp.table.add(tp.currentDate);
-				tp.table.add(tp.age);
+				tp.table.add(tp.customerAge);
 				tp.table.add(Integer.toString(tp.quantity));
 				tp.table.add(Integer.toString(tp.ticketPrice));
-				tp.table.add(tp.discountType);
+				tp.table.add(tp.setDiscountType);
 
 				op.pricePrint(tp.ticketPrice);
 
 				tp.inputContinueExit1 = ip.inputContinueExit1();
 				tp.totalTicket += tp.ticketPrice;
 				
-				fw.dataWrite(tp.ticketDayNight, tp.age,
-						tp.quantity, tp.ticketPrice, tp.discountType);
-
+				fw.dataWrite(tp.dayOrNight, tp.customerAge,
+						tp.quantity, tp.ticketPrice, tp.setDiscountType);	
+					
+					
 				if(tp.inputContinueExit1 == 1) {
 					continue;
 				} else if(tp.inputContinueExit1 == 2) {
@@ -49,17 +54,13 @@ public class Main {
 				} else {
 					System.out.println("¿¡·¯");
 				}
+				
+				
 			}
-			
-			for(int i = 0 ; i < tp.table.size(); i++) {
-				System.out.print(tp.table.get(i) + " ");
-				if (i % 5 == 4) {
-					System.out.println();
-				}
-			}
+		
 			
 			System.out.println(tp.totalTicket);
-			
+				
 			op.printTable(tp);
 
 			tp.inputContinueExit2 = ip.inputContinueExit2();
@@ -69,9 +70,9 @@ public class Main {
 			if (tp.inputContinueExit2 == 2) {
 				break;
 			}
-			
+				
 		}
 		fw.fileClose();
 	}
-	
+
 }

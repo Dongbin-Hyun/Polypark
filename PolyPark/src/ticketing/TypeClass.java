@@ -1,20 +1,20 @@
+package ticketing;
+
 import java.util.ArrayList;
 
-public class Type {
+public class TypeClass {
+	
 	String today;
-	String ticketDayNight;
-	String age;
+	String dayOrNight;
 	int quantity;
 	int ticketPrice;
-	String discountType;
+	String customerAge;
+	String setDiscountType;
 	int exitProgram;
 	String currentDate;
 	ArrayList<String> table = new ArrayList<String>();
 	int inputContinueExit1;
 	int inputContinueExit2;
 	int totalTicket;
-
-	
-	
 
 }

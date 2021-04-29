@@ -1,5 +1,7 @@
+package ticketing;
 
-public class Constant {
+public class ConstantClass {
+	
 	final static int ticketDay = 1;
 	final static int ticketNight = 2;
 	
@@ -13,14 +15,14 @@ public class Constant {
 	final static int adultNightPrice = 46000;
 	final static int teenDayPrice = 47000;
 	final static int teenNightPrice = 40000;
-	final static int kidDayPrice = 44000;
-	final static int kidNightPrice = 37000;
+	final static int chilldDayPrice = 44000;
+	final static int childNightPrice = 37000;
 	final static int oldDayPrice = 44000;
 	final static int oldNightPrice = 37000;
 	final static int babyPrice = 0;
 	
 	
-	
+	final static double normalRate = 1.0;
 	final static double disabledRate = 0.6;
 	final static double heroRate = 0.5;
 	final static double multiChildRate = 0.8;
@@ -29,10 +31,10 @@ public class Constant {
 	final static int minBaby = 2;
 	final static int minChild = 3;
 	final static int minTeen = 13;
-	final static int minAdult = 19;
 	final static int maxChild = 12;
 	final static int maxTeen =- 18;
 	final static int maxAdult = 64;
+	
 	
 	final static int minQuantity = 1;
 	final static int maxQuantity = 10;
@@ -42,8 +44,5 @@ public class Constant {
 	final static int after2000Man = 3;
 	final static int after2000Woman = 4;
 	
-	final static String fileAddress = "PolyPark.csv";
-	
-	 
 
 }

@@ -1,26 +1,28 @@
+package ticketing;
+
 import java.util.Scanner;
 
-public class Input {
+public class InputClass {
 	Scanner sc = null;
-	Processing pc = null;
-	Output op = null;
+	ProcessingClass pc = null;
+	OutputClass op = null;
 	
-	Input() {
+	InputClass() {
 		sc = new Scanner(System.in);
-		pc = new Processing();
-		op = new Output();
+		pc = new ProcessingClass();
+		op = new OutputClass();
 	}
 	
-	public String inputTicketType() {
+	public int inputTicketType() {
 		op.ticketTypePrint();
 		int ticketChoice = sc.nextInt();
-		return pc.ticketTypeChoice(ticketChoice);	
+		return ticketChoice;
 	}
 	
 	public String inputCustmoerID() {
 		op.customerIDPrint();
-		long customerID = sc.nextLong();
-		return pc.calAge(customerID);
+		String customerID = sc.next();
+		return customerID;
 	}
 	
 	public int inputQuantity() {
@@ -30,10 +32,10 @@ public class Input {
 		
 	}
 	
-	public String inputDiscountType() {
+	public int inputDiscountType() {
 		op.discountTypePrint();
 		int discountType = sc.nextInt();
-		return pc.discountChoice(discountType);
+		return discountType;
 		
 		
 	}
@@ -56,3 +58,6 @@ public class Input {
 	}
 
 }
+
+
+
